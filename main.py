@@ -60,6 +60,7 @@ world = {
       "name": "clothe1",
       "tags": "",
       "id": "3",
+      "score":-10,
       "text": "Pretty tame, but it gets the job done\n\n+ 10 Points!\n\nType cont to continue!\n\n[[cont->classroom]]",
       "links": [
         {
@@ -120,7 +121,7 @@ world = {
       "name": "classroom",
       "tags": "",
       "id": "7",
-      "text": "Eat Chalk?\nYes or No?\n\n[[yes->DEATH]]\n[[no->Start]] ]]",
+      "text": "Eat Chalk?\nYes or No?\n\n[[yes->DEATH]]\n[[no->Start]]",
       "links": [
         {
           "linkText": "yes",
@@ -134,7 +135,7 @@ world = {
         }
       ],
       "hooks": [],
-      "cleanText": "Eat Chalk?\nYes or No?\n\n\n ]]"
+      "cleanText": "Eat Chalk?\nYes or No?\n\n\n"
     }
   ]
 }
@@ -187,6 +188,3 @@ while True:
 		score = score + current_location["score"]
 	render(current_location, score)
 	response = get_input()
-
-
-print("Thanks for playing!")
