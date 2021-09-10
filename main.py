@@ -9,7 +9,7 @@ world = {
   "creatorVersion": "2.3.14",
   "schemaName": "Harlowe 3 to JSON",
   "schemaVersion": "0.0.6",
-  "createdAtMs": 1631069478082,
+  "createdAtMs": 1631105982477,
   "passages": [
     {
       "name": "Start",
@@ -45,7 +45,7 @@ world = {
       "name": "DEATH",
       "tags": "",
       "id": "2",
-      "text": "You are dead.\nType rebirth to start from beginning\n\n[[rebirth->Start]] ]]",
+      "text": "You are dead.\nType rebirth to start from beginning\n\n[[rebirth->Start]]",
       "links": [
         {
           "linkText": "rebirth",
@@ -54,13 +54,12 @@ world = {
         }
       ],
       "hooks": [],
-      "cleanText": "You are dead.\nType rebirth to start from beginning\n\n ]]"
+      "cleanText": "You are dead.\nType rebirth to start from beginning"
     },
     {
       "name": "clothe1",
       "tags": "",
       "id": "3",
-      "score":-10,
       "text": "Pretty tame, but it gets the job done\n\n+ 10 Points!\n\nType cont to continue!\n\n[[cont->classroom]]",
       "links": [
         {
@@ -106,7 +105,7 @@ world = {
       "name": "clothe0",
       "tags": "",
       "id": "6",
-      "text": "Yeah maybe try again\n\ntype nonaked to go back\n[[nonaked->Start]]",
+      "text": "Yeah maybe try again\n\ntype nonaked to go back\n\n[[nonaked->Start]]",
       "links": [
         {
           "linkText": "nonaked",
@@ -135,7 +134,7 @@ world = {
         }
       ],
       "hooks": [],
-      "cleanText": "Eat Chalk?\nYes or No?\n\n\n"
+      "cleanText": "Eat Chalk?\nYes or No?"
     }
   ]
 }
@@ -159,11 +158,12 @@ def render(current_location, score):
 def get_input():
 	response = input('')
 	return response
+      
+
 
 def update(current_location, location_label, response):
 	if response == "":
 		return location_label
-
 	for link in current_location["links"]:
 		if link["linkText"] == response:
 			return link["passageName"]
