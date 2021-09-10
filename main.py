@@ -3,138 +3,134 @@ import sys
 assert sys.version_info >= (3,9), "This script requires at least Python 3.9"
 
 world = {
-  "uuid": "3FAA8C3E-DDB1-42EA-9D6A-FFE2456D2D82",
-  "name": "Decisions",
+  "uuid": "91D32992-1C50-493A-8F92-2D81D4DCE6BE",
+  "name": "DebugProject1",
   "creator": "Twine",
   "creatorVersion": "2.3.14",
   "schemaName": "Harlowe 3 to JSON",
   "schemaVersion": "0.0.6",
-  "createdAtMs": 1631105982477,
+  "createdAtMs": 1631310389452,
   "passages": [
     {
       "name": "Start",
       "tags": "",
       "id": "1",
-      "text": "For the 3 years that you've been alive, every decision \nhas been made for you, such as how to dress, shower, \nplay, etc. On one summer morning, you decide it was time to\nstart making decisions for yourself, starting with what to wear.\n\nclothe1 - A red flannel with jeans \nclothe2 - a lime green shirt with shorts\nclothe3 - A black jacket with sweatpants\nclothe0 - Who needs clothes?\n\n[[clothe1->clothe1]]\n[[clothe2->clothe2]]\n[[clothe3->clothe3]]\n[[clothe0->clothe0]]",
+      "text": "score - pos score\nscore2 neg score\nend end\n\n[[score->posscore]]\n[[score2->negscore]]\n[[end->end]]",
       "links": [
         {
-          "linkText": "clothe1",
-          "passageName": "clothe1",
-          "original": "[[clothe1->clothe1]]"
+          "linkText": "score",
+          "passageName": "posscore",
+          "original": "[[score->posscore]]"
         },
         {
-          "linkText": "clothe2",
-          "passageName": "clothe2",
-          "original": "[[clothe2->clothe2]]"
+          "linkText": "score2",
+          "passageName": "negscore",
+          "original": "[[score2->negscore]]"
         },
         {
-          "linkText": "clothe3",
-          "passageName": "clothe3",
-          "original": "[[clothe3->clothe3]]"
-        },
-        {
-          "linkText": "clothe0",
-          "passageName": "clothe0",
-          "original": "[[clothe0->clothe0]]"
+          "linkText": "end",
+          "passageName": "end",
+          "original": "[[end->end]]"
         }
       ],
       "hooks": [],
-      "cleanText": "For the 3 years that you've been alive, every decision \nhas been made for you, such as how to dress, shower, \nplay, etc. On one summer morning, you decide it was time to\nstart making decisions for yourself, starting with what to wear.\n\nclothe1 - A red flannel with jeans \nclothe2 - a lime green shirt with shorts\nclothe3 - A black jacket with sweatpants\nclothe0 - Who needs clothes?"
+      "cleanText": "score - pos score\nscore2 neg score\nend end"
     },
     {
-      "name": "DEATH",
-      "tags": "",
+      "name": "posscore",
+      "tags": "50",
       "id": "2",
-      "text": "You are dead.\nType rebirth to start from beginning\n\n[[rebirth->Start]]",
+      "text": "positive score\n\n[[start->Start]]",
       "links": [
         {
-          "linkText": "rebirth",
+          "linkText": "start",
           "passageName": "Start",
-          "original": "[[rebirth->Start]]"
+          "original": "[[start->Start]]"
         }
       ],
       "hooks": [],
-      "cleanText": "You are dead.\nType rebirth to start from beginning"
+      "cleanText": "positive score"
     },
     {
-      "name": "clothe1",
-      "tags": "",
+      "name": "negscore",
+      "tags": "-50",
       "id": "3",
-      "text": "Pretty tame, but it gets the job done\n\n+ 10 Points!\n\nType cont to continue!\n\n[[cont->classroom]]",
+      "text": "negative score\n[[start->Start]]",
       "links": [
         {
-          "linkText": "cont",
-          "passageName": "classroom",
-          "original": "[[cont->classroom]]"
+          "linkText": "start",
+          "passageName": "Start",
+          "original": "[[start->Start]]"
         }
       ],
       "hooks": [],
-      "cleanText": "Pretty tame, but it gets the job done\n\n+ 10 Points!\n\nType cont to continue!"
+      "cleanText": "negative score"
     },
     {
-      "name": "clothe2",
+      "name": "end",
       "tags": "",
       "id": "4",
-      "text": "You look absolutely disgusting, but points for trying to be creative\n\n+ 10 Points!\n\nType cont to continue!\n\n[[cont->classroom]]",
+      "text": "You are at the end\n\n1->endpos1\n1->endpos2\n2->negend1\n2->negend2\n\n[[1->endpos1]]\n[[1->endpos2]]\n[[2->negend1]]\n[[2->negend2]]",
       "links": [
         {
-          "linkText": "cont",
-          "passageName": "classroom",
-          "original": "[[cont->classroom]]"
-        }
-      ],
-      "hooks": [],
-      "cleanText": "You look absolutely disgusting, but points for trying to be creative\n\n+ 10 Points!\n\nType cont to continue!"
-    },
-    {
-      "name": "clothe3",
-      "tags": "",
-      "id": "5",
-      "text": "Its literally 90 degrees outside, you quickly realize this\nonce you stepped out and a pool of sweat starts piling\naround you. Yet pride made you stick with it.\n\n+ 10 Points!\n\nType cont to continue!\n\n[[cont->classroom]]",
-      "links": [
-        {
-          "linkText": "cont",
-          "passageName": "classroom",
-          "original": "[[cont->classroom]]"
-        }
-      ],
-      "hooks": [],
-      "cleanText": "Its literally 90 degrees outside, you quickly realize this\nonce you stepped out and a pool of sweat starts piling\naround you. Yet pride made you stick with it.\n\n+ 10 Points!\n\nType cont to continue!"
-    },
-    {
-      "name": "clothe0",
-      "tags": "",
-      "id": "6",
-      "text": "Yeah maybe try again\n\ntype nonaked to go back\n\n[[nonaked->Start]]",
-      "links": [
-        {
-          "linkText": "nonaked",
-          "passageName": "Start",
-          "original": "[[nonaked->Start]]"
-        }
-      ],
-      "hooks": [],
-      "cleanText": "Yeah maybe try again\n\ntype nonaked to go back"
-    },
-    {
-      "name": "classroom",
-      "tags": "",
-      "id": "7",
-      "text": "Eat Chalk?\nYes or No?\n\n[[yes->DEATH]]\n[[no->Start]]",
-      "links": [
-        {
-          "linkText": "yes",
-          "passageName": "DEATH",
-          "original": "[[yes->DEATH]]"
+          "linkText": "1",
+          "passageName": "endpos1",
+          "original": "[[1->endpos1]]"
         },
         {
-          "linkText": "no",
-          "passageName": "Start",
-          "original": "[[no->Start]]"
+          "linkText": "1",
+          "passageName": "endpos2",
+          "original": "[[1->endpos2]]"
+        },
+        {
+          "linkText": "2",
+          "passageName": "negend1",
+          "original": "[[2->negend1]]"
+        },
+        {
+          "linkText": "2",
+          "passageName": "negend2",
+          "original": "[[2->negend2]]"
         }
       ],
       "hooks": [],
-      "cleanText": "Eat Chalk?\nYes or No?"
+      "cleanText": "You are at the end\n\n1->endpos1\n1->endpos2\n2->negend1\n2->negend2"
+    },
+    {
+      "name": "endpos1",
+      "tags": "",
+      "id": "5",
+      "text": "pos score end",
+      "links": [],
+      "hooks": [],
+      "cleanText": "pos score end"
+    },
+    {
+      "name": "endpos2",
+      "tags": "",
+      "id": "6",
+      "text": "pos score end 2",
+      "links": [],
+      "hooks": [],
+      "cleanText": "pos score end 2"
+    },
+    {
+      "name": "negend1",
+      "tags": "",
+      "id": "7",
+      "text": "negend1",
+      "links": [],
+      "hooks": [],
+      "cleanText": "negend1"
+    },
+    {
+      "name": "negend2",
+      "tags": "",
+      "id": "8",
+      "text": "negend2",
+      "links": [],
+      "hooks": [],
+      "cleanText": "negend2"
     }
   ]
 }
