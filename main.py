@@ -9,7 +9,7 @@ world = {
   "creatorVersion": "2.3.14",
   "schemaName": "Harlowe 3 to JSON",
   "schemaVersion": "0.0.6",
-  "createdAtMs": 1631408985980,
+  "createdAtMs": 1631409513589,
   "passages": [
     {
       "name": "Start",
@@ -50,7 +50,7 @@ world = {
       "name": "Death",
       "tags": "0",
       "id": "2",
-      "text": "You are dead./nType restart to start from beginning\n\n[[restart->Start]]",
+      "text": "You are dead.\n\nType restart to start from beginning\n\n[[restart->Start]]",
       "links": [
         {
           "linkText": "restart",
@@ -59,7 +59,7 @@ world = {
         }
       ],
       "hooks": [],
-      "cleanText": "You are dead./nType restart to start from beginning"
+      "cleanText": "You are dead.\n\nType restart to start from beginning"
     },
     {
       "name": "clothe1",
