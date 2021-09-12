@@ -751,7 +751,7 @@ response = ""
 score=0
 
 while True:
-	if response == "QUIT":
+	if response == "quit":
 		break
 	location_label = update(current_location, location_label, response, score)
 	current_location = find_current_location(location_label)
